@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EverGreen Oracle — ไม่มีวันเก่า 🔮🌿</title>
+    <script type="text/javascript">
+      // SPA redirect fallback for GitHub Pages project site.
+      // MUST match the Vite base path set in vite.config.ts.
+      const base = '/AoengAoey';
+      const l = window.location;
+      const baseSegments = base.split('/').filter(Boolean).length;
+      const pathSegments = l.pathname.split('/').filter(Boolean);
+      // Drop the base segments to get the app path (preserve trailing slash by counting carefully)
+      const appSegments = pathSegments.slice(baseSegments);
+      const trailingSlash = l.pathname.endsWith('/') && appSegments.length ? '/' : '';
+      const appPath = '/' + appSegments.join('/') + trailingSlash;
+      // Store the original path so the React app can restore it after loading.
+      sessionStorage.setItem('github-pages-redirect', appPath + l.search + l.hash);
+      window.location.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + base + '/');
+    </script>
+  </head>
+  <body>
+    <p>กำลังนำทางไปยัง EverGreen Oracle... 🔮🌿</p>
+  </body>
+</html>

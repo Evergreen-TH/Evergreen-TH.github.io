@@ -1,0 +1,1 @@
+function o(){if(typeof localStorage<"u"){const e=localStorage.getItem("harnessUrl");if(e)return e}return"http://localhost:4001"}const c=o(),r="https://script.google.com/macros/s/AKfycbzocs1CzNpVdTQLDCcvUauuwLAHm7eIldmkCG82ImI1l0Pf8TiDIES1tT_wr6zeVPg/exec";function n(e){const t="/".replace(/\/$/,""),s=e.replace(/^\//,"");return t?`${t}/${s}`:`/${s}`}export{r as A,c as H,n as p};
