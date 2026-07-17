@@ -1,4 +1,4 @@
-import{j as e}from"./api-vendor-Lis1C2aB.js";import{b as q,r as s}from"./react-vendor-CQQIf1vr.js";import{H as g}from"./index-CoBXIg91.js";import"./icons-vendor-BrUVSGu8.js";import"./motion-vendor-OTANWae4.js";function z({receipt:n,onClose:c}){return e.jsxs(e.Fragment,{children:[e.jsx("style",{children:`
+import{j as e}from"./api-vendor-Lis1C2aB.js";import{b as q,r as s}from"./react-vendor-CQQIf1vr.js";import{H as g}from"./index-ChPR6vD8.js";import"./icons-vendor-BrUVSGu8.js";import"./motion-vendor-OTANWae4.js";function z({receipt:n,onClose:c}){return e.jsxs(e.Fragment,{children:[e.jsx("style",{children:`
         @media print {
           body > * { display: none !important; }
           #sale-receipt-root { display: block !important; position: fixed; top: 0; left: 0; width: 100%; }
