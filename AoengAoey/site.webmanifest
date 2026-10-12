@@ -1,0 +1,16 @@
+{
+  "name": "Evergreen Pharmacy เอเวอร์กรีน ฟาร์มา",
+  "short_name": "Evergreen",
+  "description": "ร้านยาโดยเภสัชกร ใน ปตท. กองบิน 41 ใกล้สนามบินเชียงใหม่ ปรึกษาเภสัชกรและสั่งยาผ่าน LINE ส่งทั่วไทย",
+  "lang": "th",
+  "start_url": "/AoengAoey/",
+  "scope": "/AoengAoey/",
+  "display": "standalone",
+  "background_color": "#FFFBEA",
+  "theme_color": "#0d9488",
+  "icons": [
+    { "src": "/AoengAoey/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/AoengAoey/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/AoengAoey/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

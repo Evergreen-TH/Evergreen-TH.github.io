@@ -1,0 +1,47 @@
+# Evergreen Pharmacy — https://evergreen-th.github.io/AoengAoey/
+# Base URL = SITE_URL in src/seo/routeMeta.ts (change both together; routeMeta.test.ts checks).
+#
+# NOTE: crawlers only read robots.txt at the root of a host (/robots.txt).
+# This copy is served at
+# /AoengAoey/robots.txt; copy it to the root of the Evergreen-TH.github.io
+# repository for it to take effect. The pages themselves also carry
+# <meta name="robots" content="noindex"> on every non-public route.
+
+User-agent: *
+Allow: /AoengAoey/$
+Allow: /AoengAoey/products
+Allow: /AoengAoey/news
+Allow: /AoengAoey/contact
+Allow: /AoengAoey/privacy
+Allow: /AoengAoey/assets/
+Allow: /AoengAoey/images/
+Allow: /AoengAoey/icons/
+Allow: /AoengAoey/data/
+
+# Staff, CRM, ERP, POS and lab tools are not for search results
+Disallow: /AoengAoey/admin
+Disallow: /AoengAoey/crm
+Disallow: /AoengAoey/erp
+Disallow: /AoengAoey/pos
+Disallow: /AoengAoey/chat
+Disallow: /AoengAoey/expenses
+Disallow: /AoengAoey/documents
+Disallow: /AoengAoey/notifications
+Disallow: /AoengAoey/reports
+Disallow: /AoengAoey/pharmacist
+Disallow: /AoengAoey/deposit
+Disallow: /AoengAoey/reservation
+Disallow: /AoengAoey/history
+Disallow: /AoengAoey/oracle
+Disallow: /AoengAoey/fleet
+Disallow: /AoengAoey/soul
+Disallow: /AoengAoey/vault-graph
+Disallow: /AoengAoey/feature-board
+Disallow: /AoengAoey/ticket-timeline
+Disallow: /AoengAoey/agents-rpg
+Disallow: /AoengAoey/harness
+Disallow: /AoengAoey/drug-interaction
+Disallow: /AoengAoey/phayakorn
+Disallow: /AoengAoey/fortune
+
+Sitemap: https://evergreen-th.github.io/AoengAoey/sitemap.xml

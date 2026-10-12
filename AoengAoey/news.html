@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>ข่าวสาร &amp; โปรโมชั่น | Evergreen Pharmacy</title>
+    <meta name="description" content="ข่าวสาร โปรโมชั่น และสิทธิพิเศษสมาชิกจากร้านยาเอเวอร์กรีน ฟาร์มา เชียงใหม่ ร้านยาโดยเภสัชกร ใกล้สนามบินเชียงใหม่" />
+    <!-- Absolute URLs below = SITE_URL in src/seo/routeMeta.ts (change together; routeMeta.test.ts checks). RouteMeta.tsx updates them per route. -->
+    <link rel="canonical" href="https://evergreen-th.github.io/AoengAoey/news" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/AoengAoey/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/AoengAoey/icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/AoengAoey/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/AoengAoey/site.webmanifest" />
+    <meta name="theme-color" content="#0d9488" />
+    <!-- Theme attribute for every route, and on home only: start the hero poster (the LCP image) before the JS runs. Mirrors HeroStage.tsx posterSet()
+         and ThemeProvider's theme rule (saved choice, else light 06:00-18:00). -->
+    <script id="ev-hero-preload">
+      (function () {
+        try {
+          var base = '/AoengAoey/';
+          var t = null;
+          try { t = localStorage.getItem('theme'); } catch (e) {}
+          if (t !== 'light' && t !== 'dark') { var h = new Date().getHours(); t = h >= 6 && h < 18 ? 'light' : 'dark'; }
+          document.documentElement.setAttribute('data-theme', t);
+          var p = location.pathname;
+          if (p !== base && p !== base + 'index.html' && p + '/' !== base) return;
+          var wide = matchMedia('(min-width: 768px)').matches;
+          var u = function (n) { return base + 'images/hero/counter-' + t + '-' + n + '.webp'; };
+          var l = document.createElement('link');
+          l.rel = 'preload'; l.as = 'image'; l.type = 'image/webp'; l.setAttribute('fetchpriority', 'high');
+          l.setAttribute('imagesizes', '100vw');
+          l.setAttribute('imagesrcset', wide ? u('1280') + ' 1280w, ' + u('1920') + ' 1920w' : u('phone-480') + ' 480w, ' + u('phone-768') + ' 768w');
+          document.head.appendChild(l);
+        } catch (e) {}
+      })();
+    </script>
+    <!-- Web fonts are self-hosted (imported in src/main.tsx, font-display: swap): no request to Google -->
+
+    <!-- Open Graph / LINE / Facebook previews (scrapers do not run JS, so these are the defaults) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="th_TH" />
+    <meta property="og:site_name" content="Evergreen Pharmacy เอเวอร์กรีน ฟาร์มา" />
+    <meta property="og:title" content="ข่าวสาร &amp; โปรโมชั่น | Evergreen Pharmacy" />
+    <meta property="og:description" content="ข่าวสาร โปรโมชั่น และสิทธิพิเศษสมาชิกจากร้านยาเอเวอร์กรีน ฟาร์มา เชียงใหม่ ร้านยาโดยเภสัชกร ใกล้สนามบินเชียงใหม่" />
+    <meta property="og:url" content="https://evergreen-th.github.io/AoengAoey/news" />
+    <meta property="og:image" content="https://evergreen-th.github.io/AoengAoey/images/brand/storefront-photo.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="900" />
+    <meta property="og:image:height" content="620" />
+    <meta property="og:image:alt" content="หน้าร้านเอเวอร์กรีน ฟาร์มา ในปั๊ม ปตท. กองบิน 41 ใกล้สนามบินเชียงใหม่" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ข่าวสาร &amp; โปรโมชั่น | Evergreen Pharmacy" />
+    <meta name="twitter:description" content="ข่าวสาร โปรโมชั่น และสิทธิพิเศษสมาชิกจากร้านยาเอเวอร์กรีน ฟาร์มา เชียงใหม่ ร้านยาโดยเภสัชกร ใกล้สนามบินเชียงใหม่" />
+    <meta name="twitter:image" content="https://evergreen-th.github.io/AoengAoey/images/brand/storefront-photo.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Pharmacy",
+        "@id": "https://evergreen-th.github.io/AoengAoey/#pharmacy",
+        "name": "Evergreen Pharmacy",
+        "alternateName": "เอเวอร์กรีน ฟาร์มา",
+        "description": "ร้านยาโดยเภสัชกร ตั้งแต่ปี 2021 ในปั๊ม ปตท. กองบิน 41 ใกล้สนามบินเชียงใหม่ ปรึกษาเรื่องยาและสั่งยาผ่าน LINE จัดส่งทั่วไทย",
+        "url": "https://evergreen-th.github.io/AoengAoey/",
+        "logo": "https://evergreen-th.github.io/AoengAoey/icons/icon-512.png",
+        "image": [
+          "https://evergreen-th.github.io/AoengAoey/images/brand/storefront-photo.jpg",
+          "https://evergreen-th.github.io/AoengAoey/images/brand/service-interior.jpg"
+        ],
+        "foundingDate": "2021",
+        "telephone": "+66945562391",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "10/988 หมู่ 3 ต.สุเทพ (ในปั๊ม ปตท. กองบิน 41)",
+          "addressLocality": "อำเภอเมืองเชียงใหม่",
+          "addressRegion": "เชียงใหม่",
+          "postalCode": "50200",
+          "addressCountry": "TH"
+        },
+        "hasMap": "https://maps.app.goo.gl/GPrK8qeY9drcrSwT6",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "10:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "13:00",
+            "closes": "18:00"
+          }
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+66945562391",
+            "contactType": "customer service",
+            "areaServed": "TH",
+            "availableLanguage": ["th", "en"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+66877899323",
+            "contactType": "customer service",
+            "areaServed": "TH",
+            "availableLanguage": ["th"]
+          }
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Chiang Mai" },
+          { "@type": "Country", "name": "Thailand" }
+        ],
+        "currenciesAccepted": "THB",
+        "priceRange": "฿",
+        "sameAs": [
+          "https://www.facebook.com/EvergreenPharma2021CNX/",
+          "https://line.me/R/ti/p/@602wtsnb"
+        ]
+      }
+    </script>
+    <script type="module" crossorigin src="/AoengAoey/assets/index-S_K7_nWL.js"></script>
+    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js">
+    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/motion-vendor-BP310aZ0.js">
+    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/react-vendor-Cm1ArGsY.js">
+    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/createLucideIcon-Dj57rFYY.js">
+    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-BHIkLet1.css">
+    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/NewsPage-WT0gk_kA.js">
+  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/chevron-left-CeJjc3sY.js">
+  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/chevron-right-DxISVRxe.js">
+  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/external-link-W3iCSqCq.js">
+  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/news-CAQXdtoa.js">
+  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/supabase-B8By1tEb.js">
+  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/supabase-vendor-B2ojlYpO.js">
+  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/Skeleton-r3H0ccxF.js">
+  </head>
+  <body>
+    <div id="ev-shell" aria-hidden="true"><div style="height:3.5rem"></div><div class="ev-shell-hero"><img id="ev-shell-img" alt="" decoding="async" fetchpriority="high" /></div></div>
+    <div id="root"></div>
+    <style>
+      /* Static copy of the home hero box (HomePage.tsx hero section + HeroStage poster), painted before any JS.
+         It sits behind the app (z-index -1): React's hero covers it with the same poster in the same place,
+         then HeroStage removes it. Nothing moves. */
+      #ev-shell { position: absolute; top: 0; left: 0; right: 0; z-index: -1; pointer-events: none; }
+      .ev-shell-hero { position: relative; overflow: hidden; height: min(56svh, 440px); min-height: 320px; background: linear-gradient(to bottom, #e3efe4, #f1eee2, #fbfaf3); }
+      [data-theme="dark"] .ev-shell-hero { background: linear-gradient(to bottom, #0d0820, #191032, #26173f); }
+      @media (min-width: 768px) { .ev-shell-hero { height: clamp(600px, calc(100svh - 4rem), 760px); min-height: 0; } }
+      #ev-shell-img { position: absolute; inset: 0; width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; }
+    </style>
+    <script>
+      (function () {
+        var shell = document.getElementById('ev-shell');
+        try {
+          var base = '/AoengAoey/', p = location.pathname;
+          if (p !== base && p !== base + 'index.html' && p + '/' !== base) { shell.remove(); return; }
+          var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          var wide = matchMedia('(min-width: 768px)').matches;
+          var u = function (n) { return base + 'images/hero/counter-' + t + '-' + n + '.webp'; };
+          var img = document.getElementById('ev-shell-img');
+          img.sizes = '100vw';
+          img.srcset = wide ? u('1280') + ' 1280w, ' + u('1920') + ' 1920w' : u('phone-480') + ' 480w, ' + u('phone-768') + ' 768w';
+          img.src = wide ? u('1280') : u('phone-768');
+        } catch (e) { shell && shell.remove(); }
+      })();
+    </script>
+  </body>
+</html>
