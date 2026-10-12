@@ -120,25 +120,10 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="/AoengAoey/assets/index-S_K7_nWL.js"></script>
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/motion-vendor-BP310aZ0.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/react-vendor-Cm1ArGsY.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/createLucideIcon-Dj57rFYY.js">
-    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-BHIkLet1.css">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/ProductsPage-BvyIIEke.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/external-link-W3iCSqCq.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/minus-Dwgsj5IL.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/plus-DoI5yVyq.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/shopping-bag-DH3qXsd2.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/stethoscope-CID_aGgc.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/products-peyjBTGb.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/products-BUmsqGeh.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/Skeleton-r3H0ccxF.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/orders-BfxM3nN6.js">
+    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-DiXLitSb.css">
   </head>
   <body>
-    <div id="ev-shell" aria-hidden="true"><div style="height:3.5rem"></div><div class="ev-shell-hero"><img id="ev-shell-img" alt="" decoding="async" fetchpriority="high" /></div></div>
+    <div id="ev-shell" data-route="/products" aria-hidden="true"><div style="height:3.5rem"></div><div class="pb-28 md:pb-16"><section class="max-w-6xl mx-auto px-4 pt-5 md:pt-8"><div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0B6B4C] via-[#095E43] to-[#07523A] text-[#FFFBEA] shadow-[0_20px_50px_-24px_rgba(7,82,58,0.65)]"><div class="relative px-5 py-6 md:px-10 md:py-9"><div class="flex items-start justify-between gap-4"><div class="min-w-0"><p class="text-xs font-semibold tracking-normal text-[#E8B4CC]">Evergreen Pharmacy · เชียงใหม่</p><div class="mt-1.5 text-2xl md:text-4xl font-bold leading-tight" style="font-weight:700;text-wrap:balance">ยาและเวชภัณฑ์</div><p class="mt-2 max-w-xl text-sm md:text-base text-[#FFFBEA]/80 leading-relaxed">สินค้าสุขภาพที่คัดสรรโดยเภสัชกร สอบถามข้อมูลและวิธีใช้ก่อนซื้อได้ทุกรายการ</p></div><span class="shrink-0 rounded-2xl bg-[#FFFBEA]" style="display:block;min-width:2.75rem;min-height:2.75rem"></span></div><div class="relative mt-5 md:mt-6 max-w-2xl"><div class="w-full h-12 rounded-2xl bg-white shadow-sm border border-white"></div></div><div class="mt-4 flex flex-wrap gap-2 text-[13px]"><span class="inline-flex min-h-9 items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 ring-1 ring-white/15"><i style="display:inline-block;flex:none;width:14px;height:14px"></i> จ.–ศ. 10.00–18.00 · ส. 13.00–18.00 · อา. หยุด</span></div></div></div></section></div></div>
     <div id="root"></div>
     <style>
       /* Static copy of the home hero box (HomePage.tsx hero section + HeroStage poster), painted before any JS.
@@ -147,7 +132,7 @@
       #ev-shell { position: absolute; top: 0; left: 0; right: 0; z-index: -1; pointer-events: none; }
       .ev-shell-hero { position: relative; overflow: hidden; height: min(56svh, 440px); min-height: 320px; background: linear-gradient(to bottom, #e3efe4, #f1eee2, #fbfaf3); }
       [data-theme="dark"] .ev-shell-hero { background: linear-gradient(to bottom, #0d0820, #191032, #26173f); }
-      @media (min-width: 768px) { .ev-shell-hero { height: clamp(600px, calc(100svh - 4rem), 760px); min-height: 0; } }
+      @media (min-width: 768px) { .ev-shell-hero { height: clamp(600px, calc(100svh - 4rem - 12.5rem), 760px); min-height: 0; } }
       #ev-shell-img { position: absolute; inset: 0; width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; }
     </style>
     <script>
@@ -155,7 +140,19 @@
         var shell = document.getElementById('ev-shell');
         try {
           var base = '/AoengAoey/', p = location.pathname;
-          if (p !== base && p !== base + 'index.html' && p + '/' !== base) { shell.remove(); return; }
+          // Which page this URL is ('/', '/products', ...). GitHub Pages answers /products with products.html.
+          var rel = p.indexOf(base) === 0 ? p.slice(base.length) : (p + '/' === base ? '' : p);
+          rel = rel.replace(/\/+$/, '').replace(/\.html$/, '');
+          var here = rel === '' || rel === 'index' ? '/' : '/' + rel;
+          // A shell belongs to one page; any other URL (a deep link restored by 404.html, a staff page) drops it.
+          if (here !== shell.getAttribute('data-route')) { shell.remove(); return; }
+          if (here !== '/') {
+            // The other pages' shells are Thai only (see src/seo/routeShell.ts)
+            var lang = null;
+            try { lang = localStorage.getItem('lang'); } catch (e) {}
+            if (lang === 'en' || lang === 'zh') shell.remove();
+            return;
+          }
           var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
           var wide = matchMedia('(min-width: 768px)').matches;
           var u = function (n) { return base + 'images/hero/counter-' + t + '-' + n + '.webp'; };
@@ -166,5 +163,6 @@
         } catch (e) { shell && shell.remove(); }
       })();
     </script>
+  <script id="ev-boot">(function(){var P=["/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js","/AoengAoey/assets/motion-vendor-BP310aZ0.js","/AoengAoey/assets/react-vendor-Cm1ArGsY.js","/AoengAoey/assets/createLucideIcon-Dj57rFYY.js","/AoengAoey/assets/ProductsPage-DPHOzfTR.js","/AoengAoey/assets/external-link-W3iCSqCq.js","/AoengAoey/assets/image-off-DFNVVrcw.js","/AoengAoey/assets/minus-Dwgsj5IL.js","/AoengAoey/assets/plus-DoI5yVyq.js","/AoengAoey/assets/shopping-bag-DH3qXsd2.js","/AoengAoey/assets/stethoscope-CID_aGgc.js","/AoengAoey/assets/products-peyjBTGb.js","/AoengAoey/assets/products-BEUA6W3U.js","/AoengAoey/assets/orders-H83XJJCt.js","/AoengAoey/assets/CookieConsent-YU-pfP8C.js"],E="/AoengAoey/assets/index-BsV3n96d.js",d=document,go=false;function boot(){if(go)return;go=true;P.forEach(function(h){var l=d.createElement("link");l.rel="modulepreload";l.crossOrigin="";l.href=h;d.head.appendChild(l)});var s=d.createElement("script");s.type="module";s.crossOrigin="";s.src=E;d.head.appendChild(s)}try{new PerformanceObserver(function(l,o){if(l.getEntriesByName("first-contentful-paint").length){o.disconnect();boot()}}).observe({type:"paint",buffered:true})}catch(e){boot()}setTimeout(boot,1500)})();</script>
   </body>
 </html>

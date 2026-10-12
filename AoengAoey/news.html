@@ -120,23 +120,10 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="/AoengAoey/assets/index-S_K7_nWL.js"></script>
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/motion-vendor-BP310aZ0.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/react-vendor-Cm1ArGsY.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/createLucideIcon-Dj57rFYY.js">
-    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-BHIkLet1.css">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/NewsPage-WT0gk_kA.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/chevron-left-CeJjc3sY.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/chevron-right-DxISVRxe.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/external-link-W3iCSqCq.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/news-CAQXdtoa.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/supabase-B8By1tEb.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/supabase-vendor-B2ojlYpO.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/Skeleton-r3H0ccxF.js">
+    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-DiXLitSb.css">
   </head>
   <body>
-    <div id="ev-shell" aria-hidden="true"><div style="height:3.5rem"></div><div class="ev-shell-hero"><img id="ev-shell-img" alt="" decoding="async" fetchpriority="high" /></div></div>
+    <div id="ev-shell" data-route="/news" aria-hidden="true"><div style="height:3.5rem"></div><div class="pb-24 font-thai text-slate-800 md:pb-16"><section class="relative overflow-hidden bg-gradient-to-br from-[#07523A] via-[#0B6B4C] to-[#0a5f44] text-white"><div class="relative mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-[1.3fr_1fr] md:px-6 md:py-16"><div><span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-[#FFFBEA] ring-1 ring-white/20"><i style="display:inline-block;flex:none;width:13px;height:13px"></i> ข่าวสาร & โปรโมชั่น</span><div class="mt-4 text-3xl font-bold leading-tight md:text-4xl" style="font-weight:700;text-wrap:balance">อัปเดตจาก<span class="whitespace-nowrap">ร้านยา</span><br class="hidden sm:block" /> <span class="whitespace-nowrap">เอเวอร์กรีน ฟาร์มา</span></div><p class="mt-3 max-w-xl text-sm leading-relaxed text-emerald-50/85 md:text-base">สิทธิพิเศษสำหรับสมาชิก กิจกรรม และข่าวสารล่าสุดของร้าน ติดตามได้ทาง LINE และ Facebook ของร้าน</p><div class="mt-6 flex flex-wrap gap-3"><span class="inline-flex items-center gap-2 rounded-xl bg-[#047A3A] px-5 py-3 text-sm font-bold text-white shadow-lg shadow-black/10"><i style="display:inline-block;flex:none;width:17px;height:17px"></i> เพิ่มเพื่อน LINE</span><span class="inline-flex items-center gap-2 rounded-xl bg-white/10 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/25"><i style="display:inline-block;flex:none;width:17px;height:17px"></i> ติดตาม Facebook</span></div></div><div class="relative mx-auto hidden w-full max-w-sm md:block"><div class="absolute inset-0 translate-x-3 translate-y-3 rounded-3xl bg-[#E8B4CC]/40"></div><img src="/AoengAoey/images/brand/storefront-photo.jpg" alt="" loading="lazy" decoding="async" class="relative aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl ring-4 ring-white/15" /></div></div></section></div></div>
     <div id="root"></div>
     <style>
       /* Static copy of the home hero box (HomePage.tsx hero section + HeroStage poster), painted before any JS.
@@ -145,7 +132,7 @@
       #ev-shell { position: absolute; top: 0; left: 0; right: 0; z-index: -1; pointer-events: none; }
       .ev-shell-hero { position: relative; overflow: hidden; height: min(56svh, 440px); min-height: 320px; background: linear-gradient(to bottom, #e3efe4, #f1eee2, #fbfaf3); }
       [data-theme="dark"] .ev-shell-hero { background: linear-gradient(to bottom, #0d0820, #191032, #26173f); }
-      @media (min-width: 768px) { .ev-shell-hero { height: clamp(600px, calc(100svh - 4rem), 760px); min-height: 0; } }
+      @media (min-width: 768px) { .ev-shell-hero { height: clamp(600px, calc(100svh - 4rem - 12.5rem), 760px); min-height: 0; } }
       #ev-shell-img { position: absolute; inset: 0; width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; }
     </style>
     <script>
@@ -153,7 +140,19 @@
         var shell = document.getElementById('ev-shell');
         try {
           var base = '/AoengAoey/', p = location.pathname;
-          if (p !== base && p !== base + 'index.html' && p + '/' !== base) { shell.remove(); return; }
+          // Which page this URL is ('/', '/products', ...). GitHub Pages answers /products with products.html.
+          var rel = p.indexOf(base) === 0 ? p.slice(base.length) : (p + '/' === base ? '' : p);
+          rel = rel.replace(/\/+$/, '').replace(/\.html$/, '');
+          var here = rel === '' || rel === 'index' ? '/' : '/' + rel;
+          // A shell belongs to one page; any other URL (a deep link restored by 404.html, a staff page) drops it.
+          if (here !== shell.getAttribute('data-route')) { shell.remove(); return; }
+          if (here !== '/') {
+            // The other pages' shells are Thai only (see src/seo/routeShell.ts)
+            var lang = null;
+            try { lang = localStorage.getItem('lang'); } catch (e) {}
+            if (lang === 'en' || lang === 'zh') shell.remove();
+            return;
+          }
           var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
           var wide = matchMedia('(min-width: 768px)').matches;
           var u = function (n) { return base + 'images/hero/counter-' + t + '-' + n + '.webp'; };
@@ -164,5 +163,6 @@
         } catch (e) { shell && shell.remove(); }
       })();
     </script>
+  <script id="ev-boot">(function(){var P=["/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js","/AoengAoey/assets/motion-vendor-BP310aZ0.js","/AoengAoey/assets/react-vendor-Cm1ArGsY.js","/AoengAoey/assets/createLucideIcon-Dj57rFYY.js","/AoengAoey/assets/NewsPage-BdCduO9f.js","/AoengAoey/assets/chevron-left-CeJjc3sY.js","/AoengAoey/assets/chevron-right-DxISVRxe.js","/AoengAoey/assets/external-link-W3iCSqCq.js","/AoengAoey/assets/info-DDFidUlH.js","/AoengAoey/assets/news-Cnq3_dQT.js","/AoengAoey/assets/supabase-_Jwa4P2i.js","/AoengAoey/assets/supabase-vendor-B2ojlYpO.js","/AoengAoey/assets/CookieConsent-YU-pfP8C.js"],E="/AoengAoey/assets/index-BsV3n96d.js",d=document,go=false;function boot(){if(go)return;go=true;P.forEach(function(h){var l=d.createElement("link");l.rel="modulepreload";l.crossOrigin="";l.href=h;d.head.appendChild(l)});var s=d.createElement("script");s.type="module";s.crossOrigin="";s.src=E;d.head.appendChild(s)}try{new PerformanceObserver(function(l,o){if(l.getEntriesByName("first-contentful-paint").length){o.disconnect();boot()}}).observe({type:"paint",buffered:true})}catch(e){boot()}setTimeout(boot,1500)})();</script>
   </body>
 </html>

@@ -120,18 +120,10 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="/AoengAoey/assets/index-S_K7_nWL.js"></script>
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/motion-vendor-BP310aZ0.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/react-vendor-Cm1ArGsY.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/createLucideIcon-Dj57rFYY.js">
-    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-BHIkLet1.css">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/ContactPage-Bv7JfJCz.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/external-link-W3iCSqCq.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/store-CrI2j8CD.js">
+    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-DiXLitSb.css">
   </head>
   <body>
-    <div id="ev-shell" aria-hidden="true"><div style="height:3.5rem"></div><div class="ev-shell-hero"><img id="ev-shell-img" alt="" decoding="async" fetchpriority="high" /></div></div>
+    <div id="ev-shell" data-route="/contact" aria-hidden="true"><div style="height:3.5rem"></div><div class="pb-24 md:pb-20 overflow-x-hidden"><section class="relative"><div class="absolute inset-0 -z-10 bg-gradient-to-b from-[#FFFBEA] via-[#FFFBEA]/70 to-transparent"></div><div class="max-w-6xl mx-auto px-4 pt-8 md:pt-14 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"><div><span class="inline-flex items-center gap-2 rounded-full bg-[#0B6B4C]/10 text-[#07523A] text-xs font-semibold px-3 py-1.5"><i style="display:inline-block;flex:none;width:14px;height:14px"></i> ติดต่อเรา</span><div class="mt-4 text-2xl sm:text-3xl md:text-4xl font-bold text-[#07523A] leading-snug" style="font-weight:700;text-wrap:balance">แวะมาปรึกษาเภสัชกรที่ร้าน หรือทักหาเราได้เลย</div><p class="mt-3 text-sm md:text-base text-slate-600 leading-relaxed max-w-xl">ร้านยาเอเวอร์กรีน ฟาร์มา เชียงใหม่ ดูแลด้วยเภสัชกร ตั้งแต่ปี 2021 — โทร ทัก LINE หรือนำทางมาที่ร้านได้ทันที</p><div class="mt-6 flex flex-col sm:flex-row flex-wrap gap-3"><span class="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0B6B4C] text-white font-semibold px-5 py-3 shadow-md shadow-[#0B6B4C]/20"><i style="display:inline-block;flex:none;width:18px;height:18px"></i> โทรหาร้าน · 094-556-2391</span><span class="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#047A3A] text-white font-semibold px-5 py-3 shadow-md shadow-[#06C755]/20"><i style="display:inline-block;flex:none;width:18px;height:18px"></i> แชท LINE</span><span class="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-[#0B6B4C]/25 bg-white text-[#07523A] font-semibold px-5 py-3"><i style="display:inline-block;flex:none;width:18px;height:18px"></i> นำทางด้วย Google Maps</span></div><div class="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm"><span class="relative flex h-2.5 w-2.5 shrink-0"></span><span class="whitespace-nowrap font-semibold" style="visibility:hidden">เปิดอยู่ตอนนี้</span><span class="text-slate-400">·</span><span class="text-slate-500">จันทร์ – ศุกร์ 10.00 – 18.00 น. · เสาร์ 13.00 – 18.00 น.</span></div></div><figure class="relative"><div class="overflow-hidden rounded-[1.75rem] border-4 border-white shadow-xl shadow-[#07523A]/15 aspect-[900/620] bg-[#FFFBEA]"><img src="/AoengAoey/images/brand/storefront-photo.jpg" alt="" width="900" height="620" fetchpriority="high" decoding="async" class="w-full h-full object-cover" /></div></figure></div></section></div></div>
     <div id="root"></div>
     <style>
       /* Static copy of the home hero box (HomePage.tsx hero section + HeroStage poster), painted before any JS.
@@ -140,7 +132,7 @@
       #ev-shell { position: absolute; top: 0; left: 0; right: 0; z-index: -1; pointer-events: none; }
       .ev-shell-hero { position: relative; overflow: hidden; height: min(56svh, 440px); min-height: 320px; background: linear-gradient(to bottom, #e3efe4, #f1eee2, #fbfaf3); }
       [data-theme="dark"] .ev-shell-hero { background: linear-gradient(to bottom, #0d0820, #191032, #26173f); }
-      @media (min-width: 768px) { .ev-shell-hero { height: clamp(600px, calc(100svh - 4rem), 760px); min-height: 0; } }
+      @media (min-width: 768px) { .ev-shell-hero { height: clamp(600px, calc(100svh - 4rem - 12.5rem), 760px); min-height: 0; } }
       #ev-shell-img { position: absolute; inset: 0; width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; }
     </style>
     <script>
@@ -148,7 +140,19 @@
         var shell = document.getElementById('ev-shell');
         try {
           var base = '/AoengAoey/', p = location.pathname;
-          if (p !== base && p !== base + 'index.html' && p + '/' !== base) { shell.remove(); return; }
+          // Which page this URL is ('/', '/products', ...). GitHub Pages answers /products with products.html.
+          var rel = p.indexOf(base) === 0 ? p.slice(base.length) : (p + '/' === base ? '' : p);
+          rel = rel.replace(/\/+$/, '').replace(/\.html$/, '');
+          var here = rel === '' || rel === 'index' ? '/' : '/' + rel;
+          // A shell belongs to one page; any other URL (a deep link restored by 404.html, a staff page) drops it.
+          if (here !== shell.getAttribute('data-route')) { shell.remove(); return; }
+          if (here !== '/') {
+            // The other pages' shells are Thai only (see src/seo/routeShell.ts)
+            var lang = null;
+            try { lang = localStorage.getItem('lang'); } catch (e) {}
+            if (lang === 'en' || lang === 'zh') shell.remove();
+            return;
+          }
           var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
           var wide = matchMedia('(min-width: 768px)').matches;
           var u = function (n) { return base + 'images/hero/counter-' + t + '-' + n + '.webp'; };
@@ -159,5 +163,6 @@
         } catch (e) { shell && shell.remove(); }
       })();
     </script>
+  <script id="ev-boot">(function(){var P=["/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js","/AoengAoey/assets/motion-vendor-BP310aZ0.js","/AoengAoey/assets/react-vendor-Cm1ArGsY.js","/AoengAoey/assets/createLucideIcon-Dj57rFYY.js","/AoengAoey/assets/ContactPage-Dq7Lbi_o.js","/AoengAoey/assets/external-link-W3iCSqCq.js","/AoengAoey/assets/store-CrI2j8CD.js","/AoengAoey/assets/CookieConsent-YU-pfP8C.js"],E="/AoengAoey/assets/index-BsV3n96d.js",d=document,go=false;function boot(){if(go)return;go=true;P.forEach(function(h){var l=d.createElement("link");l.rel="modulepreload";l.crossOrigin="";l.href=h;d.head.appendChild(l)});var s=d.createElement("script");s.type="module";s.crossOrigin="";s.src=E;d.head.appendChild(s)}try{new PerformanceObserver(function(l,o){if(l.getEntriesByName("first-contentful-paint").length){o.disconnect();boot()}}).observe({type:"paint",buffered:true})}catch(e){boot()}setTimeout(boot,1500)})();</script>
   </body>
 </html>

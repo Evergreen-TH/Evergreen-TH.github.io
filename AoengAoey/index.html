@@ -120,25 +120,10 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="/AoengAoey/assets/index-S_K7_nWL.js"></script>
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/motion-vendor-BP310aZ0.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/react-vendor-Cm1ArGsY.js">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/createLucideIcon-Dj57rFYY.js">
-    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-BHIkLet1.css">
-    <link rel="modulepreload" crossorigin href="/AoengAoey/assets/HomePage-CEmLhXfe.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/tag-DiIBcH5B.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/chevron-right-DxISVRxe.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/circle-check-UBAvff9O.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/useSiteContent-CjQn5HTY.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/stethoscope-CID_aGgc.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/store-CrI2j8CD.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/shopping-bag-DH3qXsd2.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/products-BUmsqGeh.js">
-  <link rel="modulepreload" crossorigin href="/AoengAoey/assets/products-peyjBTGb.js">
+    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-DiXLitSb.css">
   </head>
   <body>
-    <div id="ev-shell" aria-hidden="true"><div style="height:3.5rem"></div><div class="ev-shell-hero"><img id="ev-shell-img" alt="" decoding="async" fetchpriority="high" /></div></div>
+    <div id="ev-shell" data-route="/" aria-hidden="true"><div style="height:3.5rem"></div><div class="ev-shell-hero"><img id="ev-shell-img" alt="" decoding="async" fetchpriority="high" /></div></div>
     <div id="root"></div>
     <style>
       /* Static copy of the home hero box (HomePage.tsx hero section + HeroStage poster), painted before any JS.
@@ -147,7 +132,7 @@
       #ev-shell { position: absolute; top: 0; left: 0; right: 0; z-index: -1; pointer-events: none; }
       .ev-shell-hero { position: relative; overflow: hidden; height: min(56svh, 440px); min-height: 320px; background: linear-gradient(to bottom, #e3efe4, #f1eee2, #fbfaf3); }
       [data-theme="dark"] .ev-shell-hero { background: linear-gradient(to bottom, #0d0820, #191032, #26173f); }
-      @media (min-width: 768px) { .ev-shell-hero { height: clamp(600px, calc(100svh - 4rem), 760px); min-height: 0; } }
+      @media (min-width: 768px) { .ev-shell-hero { height: clamp(600px, calc(100svh - 4rem - 12.5rem), 760px); min-height: 0; } }
       #ev-shell-img { position: absolute; inset: 0; width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; }
     </style>
     <script>
@@ -155,7 +140,19 @@
         var shell = document.getElementById('ev-shell');
         try {
           var base = '/AoengAoey/', p = location.pathname;
-          if (p !== base && p !== base + 'index.html' && p + '/' !== base) { shell.remove(); return; }
+          // Which page this URL is ('/', '/products', ...). GitHub Pages answers /products with products.html.
+          var rel = p.indexOf(base) === 0 ? p.slice(base.length) : (p + '/' === base ? '' : p);
+          rel = rel.replace(/\/+$/, '').replace(/\.html$/, '');
+          var here = rel === '' || rel === 'index' ? '/' : '/' + rel;
+          // A shell belongs to one page; any other URL (a deep link restored by 404.html, a staff page) drops it.
+          if (here !== shell.getAttribute('data-route')) { shell.remove(); return; }
+          if (here !== '/') {
+            // The other pages' shells are Thai only (see src/seo/routeShell.ts)
+            var lang = null;
+            try { lang = localStorage.getItem('lang'); } catch (e) {}
+            if (lang === 'en' || lang === 'zh') shell.remove();
+            return;
+          }
           var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
           var wide = matchMedia('(min-width: 768px)').matches;
           var u = function (n) { return base + 'images/hero/counter-' + t + '-' + n + '.webp'; };
@@ -166,5 +163,6 @@
         } catch (e) { shell && shell.remove(); }
       })();
     </script>
+  <script id="ev-boot">(function(){var P=["/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js","/AoengAoey/assets/motion-vendor-BP310aZ0.js","/AoengAoey/assets/react-vendor-Cm1ArGsY.js","/AoengAoey/assets/createLucideIcon-Dj57rFYY.js","/AoengAoey/assets/HomePage-Dv-vcvgF.js","/AoengAoey/assets/tag-DiIBcH5B.js","/AoengAoey/assets/chevron-right-DxISVRxe.js","/AoengAoey/assets/circle-check-UBAvff9O.js","/AoengAoey/assets/useSiteContent-DcIREpNS.js","/AoengAoey/assets/stethoscope-CID_aGgc.js","/AoengAoey/assets/store-CrI2j8CD.js","/AoengAoey/assets/shopping-bag-DH3qXsd2.js","/AoengAoey/assets/products-BEUA6W3U.js","/AoengAoey/assets/products-peyjBTGb.js","/AoengAoey/assets/CookieConsent-YU-pfP8C.js"],E="/AoengAoey/assets/index-BsV3n96d.js",d=document,go=false;function boot(){if(go)return;go=true;P.forEach(function(h){var l=d.createElement("link");l.rel="modulepreload";l.crossOrigin="";l.href=h;d.head.appendChild(l)});var s=d.createElement("script");s.type="module";s.crossOrigin="";s.src=E;d.head.appendChild(s)}try{new PerformanceObserver(function(l,o){if(l.getEntriesByName("first-contentful-paint").length){o.disconnect();boot()}}).observe({type:"paint",buffered:true})}catch(e){boot()}setTimeout(boot,1500)})();</script>
   </body>
 </html>

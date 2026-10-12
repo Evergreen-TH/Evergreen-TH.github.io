@@ -1,0 +1,1 @@
+import{r as a}from"./rolldown-runtime-W-g5d7YK.js";import{A as e,j as s,k as r}from"./index-BsV3n96d.js";import{t}from"./supabase-vendor-B2ojlYpO.js";var S=a({SITE_IMAGES_BUCKET:()=>SITE_IMAGES_BUCKET,supabase:()=>o,supabaseConfigured:()=>s}),o=s?t(e,r,{auth:{persistSession:!0,autoRefreshToken:!0}}):null;export{S as n,o as t};
