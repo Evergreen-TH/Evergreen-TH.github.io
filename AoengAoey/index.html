@@ -120,7 +120,7 @@
         ]
       }
     </script>
-    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-DiXLitSb.css">
+    <link rel="stylesheet" crossorigin href="/AoengAoey/assets/index-BeaNMtsK.css">
   </head>
   <body>
     <div id="ev-shell" data-route="/" aria-hidden="true"><div style="height:3.5rem"></div><div class="ev-shell-hero"><img id="ev-shell-img" alt="" decoding="async" fetchpriority="high" /></div></div>
@@ -138,6 +138,8 @@
     <script>
       (function () {
         var shell = document.getElementById('ev-shell');
+        var banner = document.getElementById('ev-shell-consent'); // static cookie banner, only on the pages with a shell
+        var dropAll = function () { if (shell) shell.remove(); if (banner) banner.remove(); };
         try {
           var base = '/AoengAoey/', p = location.pathname;
           // Which page this URL is ('/', '/products', ...). GitHub Pages answers /products with products.html.
@@ -145,12 +147,17 @@
           rel = rel.replace(/\/+$/, '').replace(/\.html$/, '');
           var here = rel === '' || rel === 'index' ? '/' : '/' + rel;
           // A shell belongs to one page; any other URL (a deep link restored by 404.html, a staff page) drops it.
-          if (here !== shell.getAttribute('data-route')) { shell.remove(); return; }
+          if (here !== shell.getAttribute('data-route')) { dropAll(); return; }
           if (here !== '/') {
             // The other pages' shells are Thai only (see src/seo/routeShell.ts)
             var lang = null;
             try { lang = localStorage.getItem('lang'); } catch (e) {}
-            if (lang === 'en' || lang === 'zh') shell.remove();
+            if (lang === 'en' || lang === 'zh') { dropAll(); return; }
+            // Already chose (same test as src/lib/consent.ts getConsent): there is no banner to show.
+            try {
+              var c = JSON.parse(localStorage.getItem('ev-consent-v1') || 'null');
+              if (c && c.v === 1 && banner) banner.remove();
+            } catch (e) {}
             return;
           }
           var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
@@ -160,9 +167,9 @@
           img.sizes = '100vw';
           img.srcset = wide ? u('1280') + ' 1280w, ' + u('1920') + ' 1920w' : u('phone-480') + ' 480w, ' + u('phone-768') + ' 768w';
           img.src = wide ? u('1280') : u('phone-768');
-        } catch (e) { shell && shell.remove(); }
+        } catch (e) { dropAll(); }
       })();
     </script>
-  <script id="ev-boot">(function(){var P=["/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js","/AoengAoey/assets/motion-vendor-BP310aZ0.js","/AoengAoey/assets/react-vendor-Cm1ArGsY.js","/AoengAoey/assets/createLucideIcon-Dj57rFYY.js","/AoengAoey/assets/HomePage-Dv-vcvgF.js","/AoengAoey/assets/tag-DiIBcH5B.js","/AoengAoey/assets/chevron-right-DxISVRxe.js","/AoengAoey/assets/circle-check-UBAvff9O.js","/AoengAoey/assets/useSiteContent-DcIREpNS.js","/AoengAoey/assets/stethoscope-CID_aGgc.js","/AoengAoey/assets/store-CrI2j8CD.js","/AoengAoey/assets/shopping-bag-DH3qXsd2.js","/AoengAoey/assets/products-BEUA6W3U.js","/AoengAoey/assets/products-peyjBTGb.js","/AoengAoey/assets/CookieConsent-YU-pfP8C.js"],E="/AoengAoey/assets/index-BsV3n96d.js",d=document,go=false;function boot(){if(go)return;go=true;P.forEach(function(h){var l=d.createElement("link");l.rel="modulepreload";l.crossOrigin="";l.href=h;d.head.appendChild(l)});var s=d.createElement("script");s.type="module";s.crossOrigin="";s.src=E;d.head.appendChild(s)}try{new PerformanceObserver(function(l,o){if(l.getEntriesByName("first-contentful-paint").length){o.disconnect();boot()}}).observe({type:"paint",buffered:true})}catch(e){boot()}setTimeout(boot,1500)})();</script>
+  <script id="ev-boot">(function(){var P=["/AoengAoey/assets/rolldown-runtime-W-g5d7YK.js","/AoengAoey/assets/motion-vendor-BP310aZ0.js","/AoengAoey/assets/react-vendor-Cm1ArGsY.js","/AoengAoey/assets/createLucideIcon-Dj57rFYY.js","/AoengAoey/assets/HomePage-BKpQ0GpP.js","/AoengAoey/assets/tag-DiIBcH5B.js","/AoengAoey/assets/chevron-right-DxISVRxe.js","/AoengAoey/assets/circle-check-UBAvff9O.js","/AoengAoey/assets/useSiteContent-ClcSw1UG.js","/AoengAoey/assets/stethoscope-CID_aGgc.js","/AoengAoey/assets/store-CrI2j8CD.js","/AoengAoey/assets/shopping-bag-DH3qXsd2.js","/AoengAoey/assets/products-DZJxqW0P.js","/AoengAoey/assets/products-peyjBTGb.js","/AoengAoey/assets/CookieConsent-h6ATZYc5.js"],E="/AoengAoey/assets/index-CLTkaqNy.js",d=document,go=false;function boot(){if(go)return;go=true;P.forEach(function(h){var l=d.createElement("link");l.rel="modulepreload";l.crossOrigin="";l.href=h;d.head.appendChild(l)});var s=d.createElement("script");s.type="module";s.crossOrigin="";s.src=E;d.head.appendChild(s)}try{new PerformanceObserver(function(l,o){if(l.getEntriesByName("first-contentful-paint").length){o.disconnect();boot()}}).observe({type:"paint",buffered:true})}catch(e){boot()}setTimeout(boot,1500)})();</script>
   </body>
 </html>

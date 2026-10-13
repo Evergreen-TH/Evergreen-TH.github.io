@@ -1,1 +1,0 @@
-import{t as a}from"./supabase-_Jwa4P2i.js";function n(r){const t=String(r??"").split(/[?#]/)[0].trim();return t.startsWith("/")?t.slice(0,120):null}async function e(r,t=a){if(!t)return;const i=n(r);if(i)try{await t.rpc("track_view",{p_path:i})}catch{}}export{e as trackView};
